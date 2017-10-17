@@ -1,0 +1,63 @@
+fileTypes: [
+  "mcrl2",
+  "mcf"
+]
+name: "mCRL2"
+patterns: [
+  {
+    match: "\\b(sort|cons|map|var|eqn|act|proc|init|struct)\\b"
+    name: "keyword.control.spec"
+  }
+  {
+    match: "\\b(sum|block|allow|hide|rename|comm|delta|tau|delay|yaled|lambda)\\b"
+    name: "keyword.control.process"
+  }
+  {
+    match: "\\b(mu|nu|forall|exists|whr|end)\\b"
+    name: "keyword.control.munu"
+  }
+  {
+    match: "[a-zA-z_][a-zA-Z0-9_]*"
+    name: "variable.language.identifier"
+  }
+  {
+    match: "\\b(Bool|Pos|Nat|Int|Real)\\b"
+    name: "entity.name.type.simple"
+  }
+  {
+    match: "\\b(List|Set|Bag|FSet|FBag)\\b"
+    name: "entity.name.type.collections"
+  }
+  {
+    match: "\\b(if|in|min|max|suc|pred|abs|floo|ceil|round|ex|A2B|head|tai|rhead|rtail|coun|Set2Bag|Bag2Set)\\b"
+    name: "entity.name.function"
+  }
+  {
+    match: "[\\.\\+|&<>:;=@(){}\\[\\],\\!\\*/\\\\-]"
+    name: "keyword.operator.one"
+  }
+  {
+    match: "\\|\\|_"
+    name: "keyword.operator.two"
+  }
+  {
+    match: "->"
+    name: "keyword.operator.three"
+  }
+  {
+    match: "\\b(true|false)\\b"
+    name: "constant.language"
+  }
+  {
+    match: "\\b[0-9]+\\b"
+    name: "constant.language"
+  }
+  {
+    captures:
+      "1":
+        name: "punctuation.definition.comment.mcrl2"
+    match: "%.*$\\n?"
+    name: "comment.line.percenage"
+  }
+]
+scopeName: "source.mcrl2"
